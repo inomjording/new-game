@@ -1,14 +1,20 @@
 import pygame
 import sys
 from pygame.locals import *
+from pygame_animatedgif import AnimatedGifSprite
 
 pygame.init()
 DISPLAYSURF = pygame.display.set_mode((320, 180))
 bg = pygame.image.load("images/home.png")
 you = pygame.image.load("images/a little friend.gif")
 pygame.display.set_caption('New Game')
-x = 10
-y = 10
+
+pygame.mixer.init()
+pygame.mixer.music.load("sound/two.mp3")
+pygame.mixer.music.play(-1)
+
+x = 50
+y = 90
 step = 5
 while True:
     for event in pygame.event.get():
